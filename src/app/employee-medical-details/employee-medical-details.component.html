@@ -1,0 +1,178 @@
+<br />
+<br />
+
+<div class="container">
+  <h2 class="text-secondary text-center">
+    {{ "medical_details.title" | translate }}
+  </h2>
+  <!-- Add Medical Details Button -->
+  <button
+    class="btn btn-primary mb-3"
+    (click)="addForm()"
+    data-bs-toggle="modal"
+    data-bs-target="#medicalModal"
+  >
+    {{ "medical_details.add_button" | translate }}
+  </button>
+  <div class="text-secondary">
+    <h5>
+      {{ "medical_details.total_dependants" | translate }}:
+      {{ totalDependents }}
+    </h5>
+  </div>
+  <!-- Medical Details Table -->
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>{{ "medical_details.policy_name" | translate }}</th>
+        <th>{{ "medical_details.salary" | translate }}</th>
+        <th>{{ "medical_details.claimed_amount" | translate }}</th>
+        <th>{{ "medical_details.policy_max_amount" | translate }}</th>
+        <th>{{ "medical_details.balance_left" | translate }}</th>
+        <th>{{ "medical_details.dependents" | translate }}</th>
+        <th>{{ "medical_details.action" | translate }}</th>
+        <!-- Edit Column -->
+      </tr>
+    </thead>
+    <tbody>
+      @for (medical of medicalDetails; track $index) {
+      <tr>
+        <td>{{ medical.id }}</td>
+        <td>{{ medical.policyName }}</td>
+        <td>{{ medical.salary | currency : "INR" }}</td>
+        <td>{{ medical.claimedAmount | currency : "INR" }}</td>
+        <td>{{ medical.policyMaxAmount | currency : "INR" }}</td>
+        <td>{{ medical.balanceLeft | currency : "INR" }}</td>
+        <td>{{ medical.numberOfDependents }}</td>
+        <td>
+          <!-- Edit Icon -->
+          <button
+            class="btn btn-warning"
+            (click)="editForm(medical)"
+            data-bs-toggle="modal"
+            data-bs-target="#medicalModal"
+          >
+            <i class="fas fa-edit"></i>
+            {{ "medical_details.edit_button" | translate }}
+          </button>
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+
+  <br />
+  <br />
+  <!-- Modal for Add/Edit Medical Details -->
+  <div
+    class="modal fade"
+    id="medicalModal"
+    tabindex="-1"
+    aria-labelledby="medicalModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="medicalModalLabel">
+            {{
+              isEditMode
+                ? ("medical_details.edit_medical_details" | translate)
+                : ("medical_details.add_medical_details" | translate)
+            }}
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <!-- Medical Form -->
+          <form (ngSubmit)="onSubmitMedicalForm()">
+            <div class="mb-3">
+              <label for="policyName" class="form-label">{{
+                "medical_details.policy_name" | translate
+              }}</label>
+              <input
+                type="text"
+                id="policyName"
+                class="form-control"
+                [(ngModel)]="medicalForm.policyName"
+                name="policyName"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="salary" class="form-label">{{
+                "medical_details.salary" | translate
+              }}</label>
+              <input
+                type="number"
+                id="salary"
+                class="form-control"
+                [(ngModel)]="medicalForm.salary"
+                name="salary"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="claimedAmount" class="form-label">{{
+                "medical_details.claimed_amount" | translate
+              }}</label>
+              <input
+                type="number"
+                id="claimedAmount"
+                class="form-control"
+                [(ngModel)]="medicalForm.claimedAmount"
+                name="claimedAmount"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="dependents" class="form-label">{{
+                "medical_details.number_of_dependents" | translate
+              }}</label>
+              <input
+                type="number"
+                id="dependents"
+                class="form-control"
+                [(ngModel)]="medicalForm.numberOfDependents"
+                name="numberOfDependents"
+                required
+              />
+            </div>
+
+            <button type="submit" class="btn btn-primary ms-1">
+              {{
+                isEditMode
+                  ? ("medical_details.update_button" | translate)
+                  : ("medical_details.add_button" | translate)
+              }}
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary ms-2"
+              data-bs-dismiss="modal"
+            >
+              {{ "medical_details.close_button" | translate }}
+            </button>
+          </form>
+
+          @if (isSuccessfullyAddedUpdated) {
+          <br />
+          <div class="alert alert-success" role="alert">
+            {{
+              isEditMode
+                ? "Medical Details updated successfully!"
+                : "Medical Details added successfully!"
+            }}
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

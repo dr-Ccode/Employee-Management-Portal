@@ -1,0 +1,204 @@
+<div class="alert alert-warning" role="alert">
+  {{ "modal_form.warning_message" | translate }}
+</div>
+@if (isSubmitted && this.addEmployeeForm.invalid && this.notificationsEnabled) {
+<div class="alert alert-danger" role="alert">
+  {{ "modal_form.error_message" | translate }}
+</div>
+
+} @if (isEmployeeAddedSuccess && this.notificationsEnabled) {
+<div class="alert alert-success" role="alert">
+  {{ "modal_form.add_success" | translate }}
+</div>
+} @else if ((isEmployeeUpdatedSuccess && this.notificationsEnabled)) {
+<div class="alert alert-success">
+  {{ "modal_form.update_success" | translate }}
+</div>
+}
+
+<form
+  class="row g-3"
+  [formGroup]="addEmployeeForm"
+  (ngSubmit)="employeeData ? onUpdate() : onSubmit()"
+  novalidate
+>
+  <div class="col-md-4">
+    <label for="validationDefault01" class="form-label">{{
+      "employee_list.first_name" | translate
+    }}</label>
+    <input
+      type="text"
+      class="form-control"
+      id="validationDefault01"
+      placeholder="Mark"
+      formControlName="firstName"
+      required
+    />
+
+    @if ((addEmployeeForm.get('firstName')?.invalid &&
+    addEmployeeForm.get('firstName')?.touched) || (isSubmitted &&
+    this.addEmployeeForm.get('firstName')?.invalid)) {
+    <div class="text-danger">
+      {{ "modal_form.first_name_error" | translate }}
+    </div>
+    }
+  </div>
+  <div class="col-md-4">
+    <label for="validationDefault02" class="form-label">{{
+      "employee_list.last_name" | translate
+    }}</label>
+    <input
+      type="text"
+      class="form-control"
+      id="validationDefault02"
+      placeholder="Otto"
+      formControlName="lastName"
+      required
+    />
+    @if ((addEmployeeForm.get('lastName')?.invalid &&
+    addEmployeeForm.get('lastName')?.touched) || ( (isSubmitted &&
+    this.addEmployeeForm.get('lastName')?.invalid))) {
+    <div class="text-danger">{{ "modal_form.last_name" | translate }}</div>
+    }
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">{{
+      "employee_list.email" | translate
+    }}</label>
+    <input
+      type="email"
+      class="form-control"
+      id="exampleInputEmail1"
+      aria-describedby="emailHelp"
+      formControlName="email"
+      placeholder="markotto@gmail.com"
+    />
+    @if ((addEmployeeForm.get('email')?.invalid &&
+    addEmployeeForm.get('email')?.touched) || (isSubmitted &&
+    this.addEmployeeForm.get('email')?.invalid)) {
+    <div class="text-danger">{{ "modal_form.email_error" | translate }}</div>
+    }
+    <div id="emailHelp" class="form-text">
+      {{ "modal_form.email_placeholder" | translate }}
+    </div>
+  </div>
+  <div class="col-md-6">
+    <label for="validationDefault03" class="form-label">{{
+      "employee_list.address" | translate
+    }}</label>
+    <input
+      type="text"
+      class="form-control"
+      id="validationDefault03"
+      formControlName="address"
+      required
+    />
+    @if ((addEmployeeForm.get('address')?.invalid &&
+    addEmployeeForm.get('address')?.touched) || (isSubmitted &&
+    this.addEmployeeForm.get('address')?.invalid)) {
+    <div class="text-danger">{{ "modal_form.address_error" | translate }}</div>
+    }
+  </div>
+
+  <div class="col-md-6">
+    <label for="profession" class="form-label">Profession</label>
+    <select id="profession" class="form-select" formControlName="profession">
+      <option value="" disabled selected>
+        {{ "modal_form.profession_placeholder" | translate }}
+      </option>
+      @for (profession of professions; track $index) {
+      <option [value]="profession.name">
+        {{ profession.name }}
+      </option>
+      }
+    </select>
+    @if ((addEmployeeForm.get('profession')?.touched &&
+    addEmployeeForm.get('profession')?.invalid) || (isSubmitted &&
+    this.addEmployeeForm.get('profession')?.invalid)) {
+    <div class="text-danger">
+      {{ "modal_form.profession_error" | translate }}
+    </div>
+    }
+  </div>
+
+  <div class="col-12">
+    <div class="form-check">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        formControlName="showAdditionalFields"
+        id="additionalFields"
+        name="additionalFields"
+      />
+      <label class="form-check-label" for="invalidCheck2">
+        {{ "modal_form.additional_fields" | translate }}
+      </label>
+    </div>
+
+    @if (addEmployeeForm.get('showAdditionalFields')?.value) {
+    <div class="col-md-4">
+      <label for="contactNumber" class="form-label">{{
+        "employee_list.contact" | translate
+      }}</label>
+      <input
+        type="string"
+        class="form-control"
+        id="contactNumber"
+        formControlName="contactNumber"
+        placeholder="1234567890"
+        [required]="addEmployeeForm.get('showAdditionalFields')?.value"
+        maxlength="10"
+        minlength="10"
+      />
+
+      @if ((addEmployeeForm.get('contactNumber')?.invalid &&
+      addEmployeeForm.get('contactNumber')?.touched) || (isSubmitted &&
+      this.addEmployeeForm.get('contactNumber')?.invalid)) {
+      <div class="text-danger">
+        {{ "modal_form.contact_error" | translate }}
+      </div>
+      }
+    </div>
+
+    <div class="col-md-4">
+      <label for="age" class="form-label">Age</label>
+      <input
+        type="number"
+        min="0"
+        max="100"
+        class="form-control"
+        id="age"
+        formControlName="age"
+        placeholder="21"
+        [required]="addEmployeeForm.get('showAdditionalFields')?.value"
+      />
+      @if ((addEmployeeForm.get('age')?.invalid &&
+      addEmployeeForm.get('age')?.touched) || (isSubmitted &&
+      this.addEmployeeForm.get('age')?.invalid)) {
+      <div class="text-danger">Age is required.</div>
+      }
+    </div>
+
+    }
+  </div>
+
+  <div class="col-12">
+    <button
+      class="btn btn-primary"
+      type="submit"
+      [disabled]="isEmployeeAddedSuccess || isEmployeeUpdatedSuccess"
+    >
+      {{ employeeData ? "Update" : "Submit form" }}
+    </button>
+
+    <button
+      type="button"
+      class="btn btn-secondary ms-2"
+      data-bs-dismiss="modal"
+      (click)="onClose()"
+    >
+      Close
+    </button>
+  </div>
+</form>

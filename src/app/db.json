@@ -1,0 +1,120 @@
+{
+  "medicalDetails": [
+    {
+      "id": "1001",
+      "policyName": "Manulife",
+      "salary": 1000000,
+      "claimedAmount": 50011,
+      "numberOfDependents": 3,
+      "policyMaxAmount": 2500000,
+      "balanceLeft": 2449989
+    },
+    {
+      "id": "1002",
+      "policyName": "ABC",
+      "salary": 60000,
+      "claimedAmount": 100000,
+      "numberOfDependents": 2,
+      "policyMaxAmount": 1500000,
+      "balanceLeft": 1400000
+    },
+    {
+      "id": "1003",
+      "policyName": "SecureLife",
+      "salary": 120000000,
+      "claimedAmount": 10000,
+      "numberOfDependents": 3,
+      "policyMaxAmount": 300000000,
+      "balanceLeft": 299990000
+    },
+    {
+      "id": "1004",
+      "policyName": "HealthPlus",
+      "salary": 350000,
+      "claimedAmount": 125000,
+      "numberOfDependents": 3,
+      "policyMaxAmount": 1000000,
+      "balanceLeft": 875000
+    },
+    {
+      "id": "1005",
+      "policyName": "XYZ Insurance",
+      "salary": 12500,
+      "claimedAmount": 5000,
+      "numberOfDependents": 1
+    },
+    {
+      "id": "1006",
+      "policyName": "BasicCare",
+      "salary": 17,
+      "claimedAmount": 5,
+      "numberOfDependents": 1
+    },
+    {
+      "id": "1007",
+      "policyName": "Manulife",
+      "salary": 152000,
+      "claimedAmount": 12501,
+      "numberOfDependents": 1,
+      "policyMaxAmount": 1000000,
+      "balanceLeft": 987500
+    },
+    {
+      "id": "1008",
+      "policyName": "Rimi Health",
+      "salary": 300000,
+      "claimedAmount": 100000,
+      "numberOfDependents": 2
+    },
+    {
+      "id": "1009",
+      "policyName": "MyName Insurance",
+      "salary": 100000,
+      "claimedAmount": 25000,
+      "numberOfDependents": 2,
+      "policyMaxAmount": 1000000,
+      "balanceLeft": 975000
+    },
+    {
+      "id": "1010",
+      "policyName": "EliteCare",
+      "salary": 300000,
+      "claimedAmount": 22000,
+      "numberOfDependents": 1,
+      "policyMaxAmount": 1000000,
+      "balanceLeft": 978000
+    },
+    {
+      "id": "1011",
+      "policyName": "FamilyShield",
+      "salary": 250000,
+      "claimedAmount": 556651,
+      "numberOfDependents": 2
+    },
+    {
+      "id": "1012",
+      "policyName": "Manulife",
+      "salary": 660000,
+      "claimedAmount": 250000,
+      "numberOfDependents": 11,
+      "policyMaxAmount": 1650000,
+      "balanceLeft": 1400000
+    },
+    {
+      "id": "1013",
+      "policyName": "AffordableCare",
+      "salary": 2,
+      "claimedAmount": 0,
+      "numberOfDependents": 3,
+      "policyMaxAmount": 1000000,
+      "balanceLeft": 1000000
+    },
+    {
+      "id": "1014",
+      "policyName": "Health Insurance",
+      "salary": 1250000,
+      "claimedAmount": 35650,
+      "numberOfDependents": 2
+    }
+  ]
+}

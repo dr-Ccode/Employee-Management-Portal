@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+:root {
+    --background-color: white;
+    --text-color: black;
+    --modal-bg-color: white; /* Default modal background */
+  }
+  
+  [data-theme="dark"] {
+    --background-color: black;
+    --text-color: white;
+    --modal-bg-color: #222; /* Dark modal background */
+  }
+  
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: 0.3s;
+  }
+  
+  /* Apply dark theme to modal */
+  .modal-content {
+    background-color: var(--modal-bg-color);
+    color: var(--text-color);
+    border-radius: 8px;
+  }
+  
+  /* Ensure the backdrop is dark */
+  .modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+  }
+  

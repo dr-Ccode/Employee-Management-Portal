@@ -1,0 +1,42 @@
+<br />
+<br /><br /><br />
+
+<div class="container d-flex justify-content-center">
+  <div class="card p-4 shadow-sm" style="width: 350px">
+    <h2 class="text-center mb-3">{{ "login.title" | translate }}</h2>
+    <form (submit)="login(); $event.preventDefault()">
+      <div class="mb-3">
+        <label for="username" class="form-label">
+          {{ "login.username" | translate }}
+        </label>
+        <input
+          type="text"
+          id="username"
+          class="form-control"
+          [(ngModel)]="username"
+          name="username"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">
+          {{ "login.password" | translate }}
+        </label>
+        <input
+          type="password"
+          id="password"
+          class="form-control"
+          [(ngModel)]="password"
+          name="password"
+          required
+        />
+      </div>
+      <button type="submit" class="btn btn-success w-100">
+        {{ "login.title" | translate }}
+      </button>
+      @if (errorMessage) {
+      <p class="text-danger text-center mt-2">{{ errorMessage }}</p>
+      }
+    </form>
+  </div>
+</div>
