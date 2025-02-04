@@ -1,0 +1,116 @@
+{
+  "settings": {
+    "title": "Settings",
+    "dark_mode": "Dark Mode",
+    "language": "Language",
+    "select_language": "Select Language",
+    "notifications": "Notifications",
+    "note": "Turning notifications off with not display error or success messages in the forms."
+  },
+  "employee_list": {
+    "title": "Employee List",
+    "add_employee_button": "Add Employee",
+    "search_employee_placeholder": "Search Employees with first name, last name or email address",
+    "search_button": "Search",
+    "sort_age": "Sort Age",
+    "youngest": "BY: youngest",
+    "oldest": "By: oldest",
+    "id": "id",
+    "image": "image",
+    "first_name": "First Name",
+    "last_name": "Last Name",
+    "email": "Email",
+    "contact": "Contact",
+    "age": "Age",
+    "salary": "Salary",
+    "address": "Address",
+    "edit": "Edit",
+    "delete": "Delete",
+    "loading": "Loading...",
+    "employees_not_found": "No Employees found, click search button to refresh the list"
+
+  },
+  
+    "medical_details": {
+      "title": "Employee Medical Details",
+      "add_button": "Add Medical Details",
+      "policy_name": "Policy Name",
+      "salary": "Salary",
+      "claimed_amount": "Claimed Amount",
+      "policy_max_amount": "Policy Max Amount",
+      "balance_left": "Balance Left",
+      "dependents": "Dependents",
+      "action": "Action",
+      "edit_button": "Edit",
+      "total_dependants": "Total Dependents",
+      "edit_medical_details": "Modifier les détails médicaux",
+      "add_medical_details" : "Ajouter des détails médicaux",
+      "number_of_dependents": "# of Dependents",
+      "update_button": "Update",
+      "close_button": "Close",
+      "policy_name_alert": "Policy Name is required",
+      "salary_alert": "Salary must be greater than 0",
+      "claimed_amount_alert": "Claimed Amount cannot be negative",
+      "dependents_alert": "Number of Dependents cannot be negative"
+    },
+    "charts": {
+      "title": "Employee Statistics",
+      "bar_chart": "Employees by age group",
+      "pie_chart": "Salary distribution",
+      "line_chart": "Average Claimed Amount"
+  
+    },
+    "modal_form": {
+      "warning_message": "Please complete the form before hitting submit",
+      "error_message": "Please correct the errors in the form",
+      "add_success": "Employee added successfully",
+      "update_success": "Employee updated successfully",
+      "additional_fields": "Additional Fields",
+      "first_name_error": "Valid First Name is required",
+      "last_name_error": "Valid Last Name is required",
+      "email_error": "Valid email address is required",
+      "email_placeholder": "We'll never share your email with anyone else",
+      "address_error": "Valid address is required",
+      "profession_error": "Please select a profession",
+      "profession_placeholder": "Select a profession",
+      "contact_error": "Valid Contact is required"
+    },
+    "navbar": {
+      "employee_portal": "Employee Portal",
+      "charts": "Charts",
+      "logout": "Logout",
+      "login": "Login"
+  
+    },
+    "pagination": {
+      "previous": "Prev",
+      "next": "Next"
+    },
+    "homepage": {
+      "title": "Employee Management Portal",
+      "description": "A seamless solution for managing employee information with efficiency and security.",
+      "employee_records": "Employee Records",
+      "employee_records_text": "Maintain and track employee details effortlessly.",
+      "medical_history":"Medical History",
+      "medical_history_text": "Access and update employees' medical records securely.",
+      "analytics": "Analytics",
+      "analytics_text": "Gain insights with interactive charts and reports.",
+      "message": "Ensure smooth HR operations with our simple and intuitive platform."
+
+    },
+    "login": {
+      "title": "Login",
+      "username": "Username",
+      "password": "Password",
+      "error": "Invalid Credentials."
+    },
+    "error": {
+      "notFoundTitle": "404- Page Not Found",
+      "notFoundMessage": "The page you are loading does not exist"
+    },
+    "404": {
+      "title": "404- Page Not Found",
+      "message": "The page you are looking doesn't exist."
+    }
+  
+}

@@ -1,0 +1,111 @@
+{
+  "settings": {
+    "title": "Paramètres",
+    "dark_mode": "Mode sombre",
+    "language": "Langue",
+    "select_language": "Choisir la langue",
+    "notifications": "avis",
+    "note": "Désactiver les notifications sans afficher les messages d'erreur ou de réussite dans les formulaires."
+  },
+  "employee_list": {
+   "title": "Liste des employés",
+    "add_employee_button": "Ajouter un employé",
+    "search_employee_placeholder": "Rechercher des employés avec leur prénom, leur nom ou leur adresse email",
+    "search_button": "Rechercher",
+    "sort_age": "Trier l'âge",
+    "id": "id",
+    "image": "image",
+    "first_name": "Prénom",
+    "last_name": "Nom de famille",
+    "e-mail": "E-mail",
+    "contact": "Contacter",
+    "age": "Âge",
+    "salary": "Salaire",
+    "address": "Adresse",
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "loading": "chargement...",
+    "youngest": "PAR: le plus jeune",
+    "oldest": "PAR: le plus ancien",
+    "employees_not_found": "Aucun employé trouvé, cliquez sur le bouton de recherche pour actualiser la liste"
+},
+"medical_details": {
+  "title": "Détails médicaux des employés",
+  "add_button": "Ajouter des détails médicaux",
+  "policy_name": "Nom de la stratégie",
+  "salary": "Salaire",
+  "claimed_amount": "Montant réclamé",
+  "policy_max_amount": "Montant maximum de la police",
+  "balance_left": "Solde à gauche",
+  "dependents": "Personnes à charge",
+  "action": "Action",
+  "edit_button": "Modifier",
+  "total_dependants": "Nombre total de personnes à charge",
+  "edit_medical_details": "Modifier les détails médicaux",
+  "add_medical_details" : "Ajouter des détails médicaux",
+  "number_of_dependents": "# de personnes à charge",
+  "update_button": "mise à jour",
+  "close_button": "fermer",
+  "policy_name_alert": "Le nom de la stratégie est requis",
+  "salary_alert": "Le salaire doit être supérieur à 0",
+  "claimed_amount_alert": "Le montant réclamé ne peut pas être négatif",
+  "dependents_alert": "Le nombre de personnes à charge ne peut pas être négatif"
+  
+},
+  "charts": {
+    "title": "Statistiques des employés",
+    "bar_chart": "Salariés par tranche d'âge",
+    "pie_chart": "Répartition des salaires",
+    "line_chart": "montant moyen réclamé"
+
+  },
+  "modal_form": {
+    "warning_message": "Veuillez remplir le formulaire avant de cliquer sur Soumettre",
+    "error_message": "Veuillez corriger les erreurs dans le formulaire",
+    "add_success": "Employé ajouté avec succès",
+    "update_success": "Employé mis à jour avec succès",
+    "additional_fields": "champs supplémentaires",
+    "first_name_error": "Un prénom valide est requis",
+    "last_name_error": "Un nom de famille valide est requis",
+    "email_error": "Une adresse e-mail valide est requise",
+    "email_placeholder": "Nous ne partagerons jamais votre email avec quelqu'un d'autre",
+    "address_error": "Une adresse valide est requise",
+    "profession_error": "Veuillez sélectionner une profession",
+    "profession_placeholder": "Sélectionnez un métier",
+    "contact_error": "Un contact valide est requis"
+  },
+  "navbar": {
+    "employee_portal": "Portail des employés",
+    "charts": "Graphiques",
+    "logout": "Déconnexion",
+    "login": "Se connecter"
+
+  },
+  "pagination": {
+    "previous": "Précédent",
+    "next": "Suivant"
+  },
+  "homepage": {
+    "title": "Portail de gestion des employés",
+    "description": "Une solution transparente pour gérer les informations des employés avec efficacité et sécurité.",
+    "employee_records": "Dossiers des employés",
+    "employee_records_text": "Maintenir et suivre les détails des employés sans effort.",
+    "medical_history":"Antécédents médicaux",
+    "medical_history_text": "Accédez et mettez à jour les dossiers médicaux des employés en toute sécurité.",
+    "analytics": "Analyses",
+    "analytics_text": "Obtenez des informations grâce aux graphiques et rapports interactifs.",
+    "message": "Assurez le bon déroulement des opérations RH grâce à notre plateforme simple et intuitive."
+
+  },
+  "login": {
+    "title": "Se connecter",
+    "username": "Nom d'utilisateur",
+    "password": "Mot de passe",
+    "error": "informations d'identification invalides"
+    
+  },
+  "404": {
+    "title": "Page non trouvée",
+    "message": "Nous sommes désolés, mais la page que vous avez demandée n'existe pas."
+  }
+}
