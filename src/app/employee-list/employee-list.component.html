@@ -4,7 +4,6 @@
   </h2>
 
   <form class="row g-3" role="search">
-    <!-- Left Section: Search Bar and Search Button -->
     <div class="col-md-8 d-flex align-items-center">
       <input
         class="form-control me-2 flex-grow-1"
@@ -25,7 +24,6 @@
       </button>
     </div>
 
-    <!-- Right Section: Add Button and Sort Dropdown -->
     <div class="col-md-4 d-flex align-items-center justify-content-end">
       <button
         class="btn btn-success me-3"
@@ -52,7 +50,7 @@
   </form>
 
   <br />
-  <!-- Loading spinner -->
+
   @if (loading) {
   <div class="d-flex justify-content-center">
     <div class="spinner-border text-primary" role="status">
@@ -61,10 +59,7 @@
       }}</span>
     </div>
   </div>
-  }
-
-  <!-- Error message -->
-  @if (error) {
+  } @if (error) {
   <div class="alert alert-danger" role="alert">
     {{ error }}
   </div>
@@ -72,10 +67,7 @@
   <p class="alert alert-danger text-center">
     {{ "employee_list.employees_not_found" | translate }}
   </p>
-  }
-
-  <!-- Employee table -->
-  @if (!loading && !error) {
+  } @if (!loading && !error) {
   <div class="table-responsive">
     <table class="table table-striped table-hover">
       <thead class="thead-light">
@@ -136,7 +128,7 @@
             {{ employee.salary | currency }}
           </td>
           <td class="d-none d-md-table-cell">{{ employee.address }}</td>
-          <!-- Edit button -->
+
           <td>
             <i
               class="bi bi-pen-fill edit"
@@ -146,7 +138,7 @@
               (click)="editEmployee(employee)"
             ></i>
           </td>
-          <!-- Delete button -->
+
           <td>
             <i
               class="bi bi-trash-fill text-danger delete"
@@ -180,13 +172,11 @@
 >
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-      <!-- Modal Header -->
       <div class="modal-header">
         <h2>{{ employeeData ? "Edit Employee" : "Add Employee" }}</h2>
       </div>
-      <!-- Modal Body -->
+
       <div class="modal-body">
-        <!-- Reusable Form Component -->
         <app-employee-modal-form
           (employeeAdded)="onEmployeeAdded($event)"
           (employeeUpdated)="updateEmployee($event)"

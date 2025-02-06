@@ -78,7 +78,7 @@ export class MedicalDetailsComponent implements OnInit {
     this.loading = true;
   
     if (!this.validateForm()) {
-      this.loading = false; // Stop loading if validation fails
+      this.loading = false; 
       return;
     }
  

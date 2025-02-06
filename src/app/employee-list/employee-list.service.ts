@@ -30,11 +30,11 @@ export class EmployeeListService {
   }
 
   updateEmployee(updatedEmployee: any): void {
-    const currentEmployees = this.employeeListSubject.getValue(); // Get current list
+    const currentEmployees = this.employeeListSubject.getValue(); // to get current list
     const updatedEmployees = currentEmployees.map(emp => 
       emp.id === updatedEmployee.id ? updatedEmployee : emp
     );
   
-    this.employeeListSubject.next(updatedEmployees); // Emit updated list
+    this.employeeListSubject.next(updatedEmployees);
   }
 }

@@ -139,8 +139,7 @@ export class EmployeeModalFormComponent implements OnInit {
       };
   
       console.log('Updating employee:', updatedEmployee);
-      this.employeeUpdated.emit(updatedEmployee); // Emit updated employee to parent
-  
+      this.employeeUpdated.emit(updatedEmployee); 
      
       this.isEmployeeUpdatedSuccess = true;
       //this.employeeAddedSuccess = true;
@@ -156,7 +155,7 @@ export class EmployeeModalFormComponent implements OnInit {
   }
  
     onClose(){
-      // this.addEmployeeForm.reset();
+      
        this.addEmployeeForm.patchValue({ showAdditionalFields: false, age: 0 });
        this.isSubmitted = false;
       this.employeeData = null;

@@ -15,42 +15,42 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class AuthService {
  
-  private mockUsername = 'David'; // Hardcoded username
-  private mockPassword = 'david@123'; // Hardcoded password
+  private mockUsername = 'David'; 
+  private mockPassword = 'david@123'; 
 
   constructor(private http: HttpClient, private router: Router, private translate: TranslateService) {}
 
-  // Login method with mock credentials check
+  
   login(username: string, password: string): Observable<{ token: string }> {
     if (username === this.mockUsername && password === this.mockPassword) {
-      return of({ token: 'mock-jwt-token-12345' }); // Mock token response
+      return of({ token: 'mock-jwt-token-12345' }); 
     } else {
       return of({ token: '' }).pipe(
         catchError((error) => {
-          // Handle error here
+          
           this.translate.get('login.error').subscribe((translatedText: string) => {
-            console.error(translatedText); // Optional: Log the error to the console
+            console.error(translatedText); 
           });
-          throw error; // Re-throw the error after logging
+          throw error; 
         })
       );
     }
   }
   
 
-  // Logout method to clear the JWT token and navigate to login page
+
   logout(): void {
-    localStorage.removeItem('token'); // Remove token from localStorage
-    this.router.navigate(['/login']); // Redirect to login page
+    localStorage.removeItem('token'); 
+    this.router.navigate(['/login']); 
   }
 
-  // Check if user is authenticated (token exists)
+  
   isAuthenticated(): boolean {
-    return !!localStorage.getItem('token'); // Returns true if token exists
+    return !!localStorage.getItem('token');
   }
 
-  // Get JWT token from localStorage
+  
   getToken(): string | null {
-    return localStorage.getItem('token'); // Returns token or null
+    return localStorage.getItem('token');
   }
 }

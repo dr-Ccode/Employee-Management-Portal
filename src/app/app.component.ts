@@ -21,10 +21,9 @@ export class AppComponent implements OnInit {
   constructor(private translate: TranslateService, private router: Router) {}
 
   ngOnInit(): void {
-    // Check localStorage for language preference
-    const savedLang = localStorage.getItem('language') || 'en'; // Default to 'en'
+  
+    const savedLang = localStorage.getItem('language') || 'en'; 
     
-    // Set the default language and use it
     this.translate.setDefaultLang(savedLang);
     this.translate.use(savedLang).subscribe(() => {
       console.log('Language set to:', savedLang);

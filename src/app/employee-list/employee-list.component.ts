@@ -48,7 +48,7 @@ export class EmployeeListComponent {
 
   onLogout(): void {
     this.authService.logout();
-    this.router.navigate(['/login']); // Redirect to login page
+    this.router.navigate(['/login']);
   }
 
 

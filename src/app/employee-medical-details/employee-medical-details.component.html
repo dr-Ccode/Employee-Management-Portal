@@ -3,7 +3,6 @@
     {{ "medical_details.title" | translate }}
   </h2>
 
-  <!-- Add Medical Details Button -->
   <div class="d-flex justify-content-between align-items-center mb-3">
     <button
       class="btn btn-primary"
@@ -20,7 +19,7 @@
       </h5>
     </div>
   </div>
-  <!-- Medical Details Table -->
+
   <div class="table-responsive">
     <table class="table table-bordered">
       <thead>
@@ -63,7 +62,6 @@
     </table>
   </div>
 
-  <!-- Modal for Add/Edit Medical Details -->
   <div
     class="modal fade"
     id="medicalModal"
@@ -89,7 +87,6 @@
           ></button>
         </div>
         <div class="modal-body">
-          <!-- Medical Form -->
           <form (ngSubmit)="onSubmitMedicalForm()">
             <div class="mb-3">
               <label for="policyName" class="form-label">{{
