@@ -5,7 +5,7 @@
       "policyName": "Manulife",
       "salary": 1000000,
       "claimedAmount": 50011,
-      "numberOfDependents": 3,
+      "numberOfDependents": 2,
       "policyMaxAmount": 2500000,
       "balanceLeft": 2449989
     },
@@ -113,8 +113,17 @@
       "id": "1014",
       "policyName": "Health Insurance",
       "salary": 1250000,
-      "claimedAmount": 35650,
-      "numberOfDependents": 2
+      "claimedAmount": 36000,
+      "numberOfDependents": 2,
+      "policyMaxAmount": 3125000,
+      "balanceLeft": 3089350
+    },
+    {
+      "id": "1015",
+      "policyName": "Manulife",
+      "salary": 250000,
+      "claimedAmount": 10000,
+      "numberOfDependents": 1
     }
   ]
 }

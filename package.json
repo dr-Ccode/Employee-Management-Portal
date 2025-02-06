@@ -26,11 +26,13 @@
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "chart.js": "^4.4.7",
+    "firebase-tools": "^13.29.3",
     "ng2-charts": "^8.0.0",
+    "ngrok": "^5.0.0-beta.2",
     "ngx-pagination": "^6.0.3",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.15.0"
+    "zone.js": "^0.15.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^19.1.3",

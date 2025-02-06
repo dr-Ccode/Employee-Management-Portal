@@ -23,7 +23,7 @@ export class MedicalDetailsComponent implements OnInit {
   isEditMode: boolean = false;
   totalDependents: number = 0; 
   isSuccessfullyAddedUpdated: boolean = false;
-
+  loading: boolean = false;
 
   notificationsEnabled?: boolean;
   
@@ -74,59 +74,76 @@ export class MedicalDetailsComponent implements OnInit {
   }
   
   onSubmitMedicalForm(): void {
+ 
+    this.loading = true;
+  
     if (!this.validateForm()) {
+      this.loading = false; // Stop loading if validation fails
       return;
     }
-    
+ 
     if (this.isEditMode) {
       this.http
         .put(
-          `http://localhost:3000/medicalDetails/${this.medicalForm.id}`,
+          `https://motion-referring-programmer-long.trycloudflare.com/medicalDetails/${this.medicalForm.id}`,
           this.medicalForm
         )
         .subscribe(
           () => {
             this.getMedicalDetails(); 
+                
             this.isSuccessfullyAddedUpdated = true;
             setTimeout(() => {
               this.isSuccessfullyAddedUpdated = false;
-            }, 3000); 
+            }, 3000);
+          
             this.addForm();
+          
+            this.loading = false;
           },
           (error) => {
             console.error('Error updating medical detail:', error);
+           
+            this.loading = false;
           }
         );
     } else {
+
       const newId =
         this.medicalDetails.length > 0
           ? Math.max(...this.medicalDetails.map((item) => item.id || 0)) + 1
           : 1001; 
-
+  
       const newMedicalDetail = {
         ...this.medicalForm,
         id: newId.toString(),
       };
-
+  
       this.http
-        .post('http://localhost:3000/medicalDetails', newMedicalDetail)
+        .post('https://motion-referring-programmer-long.trycloudflare.com/medicalDetails', newMedicalDetail)
         .subscribe(
           () => {
+
             this.getMedicalDetails(); 
+
             this.isSuccessfullyAddedUpdated = true;
             setTimeout(() => {
               this.isSuccessfullyAddedUpdated = false;
-            }, 3000); 
-            this.addForm();  // Reset form after successful submission or error
+            }, 3000);
+            
+            this.addForm();
+
+            this.loading = false;
           },
           (error) => {
             console.error('Error adding medical detail:', error);
+  
+            this.loading = false;
           }
-
         );
     }
-
   }
+  
 
   ngOnInit(): void {
     this.getMedicalDetails();
@@ -142,7 +159,7 @@ export class MedicalDetailsComponent implements OnInit {
   }
 
   getMedicalDetails(): void {
-    this.http.get<any[]>('http://localhost:3000/medicalDetails').subscribe({
+    this.http.get<any[]>('https://motion-referring-programmer-long.trycloudflare.com/medicalDetails').subscribe({
       next: (data) => {
         this.medicalDetails = data.map((item) => ({
           ...item,

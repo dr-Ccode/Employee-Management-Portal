@@ -5,7 +5,7 @@
     "language": "Language",
     "select_language": "Select Language",
     "notifications": "Notifications",
-    "note": "Turning notifications off with not display error or success messages in the forms."
+    "note": "Turning notifications off with not display error or success messages in the employee-list forms."
   },
   "employee_list": {
     "title": "Employee List",

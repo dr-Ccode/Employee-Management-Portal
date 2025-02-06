@@ -65,7 +65,7 @@ export class EmployeeModalFormComponent implements OnInit {
   
 
   addEmployeeForm: FormGroup = new FormGroup({
-   // id: new FormControl(''),
+ 
     firstName: new FormControl('', {
       validators: [Validators.required]}),
     lastName: new FormControl('', {
@@ -92,31 +92,31 @@ export class EmployeeModalFormComponent implements OnInit {
     if (this.addEmployeeForm.valid) {
       const formData = { ...this.addEmployeeForm.value };
   
-      // Create new employee
+      
       const newEmployee = { ...this.addEmployeeForm.value };
-      newEmployee.age = Math.floor(Math.random() * 101); // Random age
-      newEmployee.salary = Math.floor(Math.random() * 100); // Random salary
+      newEmployee.age = Math.floor(Math.random() * 101); 
+      newEmployee.salary = Math.floor(Math.random() * 100); 
   
       this.employeeListService.getEmployeeList().subscribe({
         next: (data) => {
-          // Assign random ID to new employee
+         
           newEmployee.id = Math.floor(Math.random() * 9999);
   
-          // Emit employee added event
+       
           this.employeeAdded.emit(newEmployee);
           this.isEmployeeAddedSuccess = true;
           this.isEmployeeUpdatedSuccess = true;
   
-          // Reset form after adding
+         
           this.addEmployeeForm.reset();
           this.addEmployeeForm.patchValue({ showAdditionalFields: false, age: 0 });
   
-          // Hide success message after 1.8 seconds
+          
           // setTimeout(() => {
           //   this.isEmployeeAddedSuccess = false;
           // }, 1800);
           
-          // Reset submission flag
+          
           this.isSubmitted = false;
         },
         error: (err) => {
@@ -141,7 +141,7 @@ export class EmployeeModalFormComponent implements OnInit {
       console.log('Updating employee:', updatedEmployee);
       this.employeeUpdated.emit(updatedEmployee); // Emit updated employee to parent
   
-      // Show success message for update
+     
       this.isEmployeeUpdatedSuccess = true;
       //this.employeeAddedSuccess = true;
       // Hide success message after 2 seconds
@@ -149,14 +149,12 @@ export class EmployeeModalFormComponent implements OnInit {
       //   this.isEmployeeUpdatedSuccess = false;
       // }, 2000);
   
-      // Do not reset form after update
       this.isSubmitted = false;
     } else {
       console.error('Invalid form values');
     }
   }
-  
-    
+ 
     onClose(){
       // this.addEmployeeForm.reset();
        this.addEmployeeForm.patchValue({ showAdditionalFields: false, age: 0 });

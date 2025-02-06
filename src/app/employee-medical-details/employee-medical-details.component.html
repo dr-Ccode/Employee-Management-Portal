@@ -1,69 +1,68 @@
-<br />
-<br />
-
-<div class="container">
-  <h2 class="text-secondary text-center">
+<div class="container mt-4">
+  <h2 class="text-secondary text-center mb-3">
     {{ "medical_details.title" | translate }}
   </h2>
+
   <!-- Add Medical Details Button -->
-  <button
-    class="btn btn-primary mb-3"
-    (click)="addForm()"
-    data-bs-toggle="modal"
-    data-bs-target="#medicalModal"
-  >
-    {{ "medical_details.add_button" | translate }}
-  </button>
-  <div class="text-secondary">
-    <h5>
-      {{ "medical_details.total_dependants" | translate }}:
-      {{ totalDependents }}
-    </h5>
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <button
+      class="btn btn-primary"
+      (click)="addForm()"
+      data-bs-toggle="modal"
+      data-bs-target="#medicalModal"
+    >
+      {{ "medical_details.add_button" | translate }}
+    </button>
+    <div class="text-secondary">
+      <h5>
+        {{ "medical_details.total_dependants" | translate }}:
+        {{ totalDependents }}
+      </h5>
+    </div>
   </div>
   <!-- Medical Details Table -->
-  <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>{{ "medical_details.policy_name" | translate }}</th>
-        <th>{{ "medical_details.salary" | translate }}</th>
-        <th>{{ "medical_details.claimed_amount" | translate }}</th>
-        <th>{{ "medical_details.policy_max_amount" | translate }}</th>
-        <th>{{ "medical_details.balance_left" | translate }}</th>
-        <th>{{ "medical_details.dependents" | translate }}</th>
-        <th>{{ "medical_details.action" | translate }}</th>
-        <!-- Edit Column -->
-      </tr>
-    </thead>
-    <tbody>
-      @for (medical of medicalDetails; track $index) {
-      <tr>
-        <td>{{ medical.id }}</td>
-        <td>{{ medical.policyName }}</td>
-        <td>{{ medical.salary | currency : "INR" }}</td>
-        <td>{{ medical.claimedAmount | currency : "INR" }}</td>
-        <td>{{ medical.policyMaxAmount | currency : "INR" }}</td>
-        <td>{{ medical.balanceLeft | currency : "INR" }}</td>
-        <td>{{ medical.numberOfDependents }}</td>
-        <td>
-          <!-- Edit Icon -->
-          <button
-            class="btn btn-warning"
-            (click)="editForm(medical)"
-            data-bs-toggle="modal"
-            data-bs-target="#medicalModal"
-          >
-            <i class="fas fa-edit"></i>
-            {{ "medical_details.edit_button" | translate }}
-          </button>
-        </td>
-      </tr>
-      }
-    </tbody>
-  </table>
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>{{ "medical_details.policy_name" | translate }}</th>
+          <th>{{ "medical_details.salary" | translate }}</th>
+          <th>{{ "medical_details.claimed_amount" | translate }}</th>
+          <th>{{ "medical_details.policy_max_amount" | translate }}</th>
+          <th>{{ "medical_details.balance_left" | translate }}</th>
+          <th>{{ "medical_details.dependents" | translate }}</th>
+          <th>{{ "medical_details.action" | translate }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (medical of medicalDetails; track $index) {
+        <tr>
+          <td>{{ medical.id }}</td>
+          <td>{{ medical.policyName }}</td>
+          <td>{{ medical.salary | currency : "INR" }}</td>
+          <td>{{ medical.claimedAmount | currency : "INR" }}</td>
+          <td>{{ medical.policyMaxAmount | currency : "INR" }}</td>
+          <td>{{ medical.balanceLeft | currency : "INR" }}</td>
+          <td>{{ medical.numberOfDependents }}</td>
+          <td>
+            <!-- Edit Icon -->
+            <button
+              class="btn btn-warning"
+              (click)="editForm(medical)"
+              data-bs-toggle="modal"
+              data-bs-target="#medicalModal"
+            >
+              <i class="fas fa-edit"></i>
+              {{ "medical_details.edit_button" | translate }}
+            </button>
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
 
-  <br />
-  <br />
   <!-- Modal for Add/Edit Medical Details -->
   <div
     class="modal fade"
@@ -145,7 +144,11 @@
               />
             </div>
 
-            <button type="submit" class="btn btn-primary ms-1">
+            <button
+              [disabled]="isSuccessfullyAddedUpdated"
+              type="submit"
+              class="btn btn-primary ms-1"
+            >
               {{
                 isEditMode
                   ? ("medical_details.update_button" | translate)
@@ -160,18 +163,16 @@
               {{ "medical_details.close_button" | translate }}
             </button>
           </form>
-
-          @if (isSuccessfullyAddedUpdated) {
-          <br />
-          <div class="alert alert-success" role="alert">
-            {{
-              isEditMode
-                ? "Medical Details updated successfully!"
-                : "Medical Details added successfully!"
-            }}
-          </div>
-          }
         </div>
+        @if (isSuccessfullyAddedUpdated) {
+        <div class="alert alert-success mt-3" role="alert">
+          {{
+            isEditMode
+              ? "Medical Details updated successfully!"
+              : "Medical Details added successfully!"
+          }}
+        </div>
+        }
       </div>
     </div>
   </div>

@@ -1,6 +1,5 @@
-<br /><br /><br /><br />
-<div class="container d-flex justify-content-center align-items-center">
-  <div class="col-md-8">
+<div class="container d-flex justify-content-center align-items-center mt-5">
+  <div class="col-lg-8 col-md-10">
     <div class="card shadow-lg border-0 rounded-4 p-4">
       <div class="card-body text-center">
         <h2 class="mb-3 fw-bold">{{ "homepage.title" | translate }}</h2>
@@ -8,30 +7,36 @@
           {{ "homepage.description" | translate }}
         </p>
         <div class="mt-4">
-          <div class="d-flex justify-content-around">
-            <div class="p-3 bg-light rounded shadow-sm w-100 mx-2">
-              <h5 class="fw-semibold">
-                {{ "homepage.employee_records" | translate }}
-              </h5>
-              <p class="text-muted">
-                {{ "homepage.employee_records_text" | translate }}
-              </p>
+          <div class="row g-3">
+            <div class="col-md-4">
+              <div class="p-3 bg-light rounded shadow-sm">
+                <h5 class="fw-semibold">
+                  {{ "homepage.employee_records" | translate }}
+                </h5>
+                <p class="text-muted">
+                  {{ "homepage.employee_records_text" | translate }}
+                </p>
+              </div>
             </div>
-            <div class="p-3 bg-light rounded shadow-sm w-100 mx-2">
-              <h5 class="fw-semibold">
-                {{ "homepage.medical_history" | translate }}
-              </h5>
-              <p class="text-muted">
-                {{ "homepage.medical_history_text" | translate }}
-              </p>
+            <div class="col-md-4">
+              <div class="p-3 bg-light rounded shadow-sm">
+                <h5 class="fw-semibold">
+                  {{ "homepage.medical_history" | translate }}
+                </h5>
+                <p class="text-muted">
+                  {{ "homepage.medical_history_text" | translate }}
+                </p>
+              </div>
             </div>
-            <div class="p-3 bg-light rounded shadow-sm w-100 mx-2">
-              <h5 class="fw-semibold">
-                {{ "homepage.analytics" | translate }}
-              </h5>
-              <p class="text-muted">
-                {{ "homepage.analytics_text" | translate }}
-              </p>
+            <div class="col-md-4">
+              <div class="p-3 bg-light rounded shadow-sm">
+                <h5 class="fw-semibold">
+                  {{ "homepage.analytics" | translate }}
+                </h5>
+                <p class="text-muted">
+                  {{ "homepage.analytics_text" | translate }}
+                </p>
+              </div>
             </div>
           </div>
         </div>

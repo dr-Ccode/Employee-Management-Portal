@@ -30,8 +30,8 @@ export class EmployeeChartsComponent implements OnInit {
   @ViewChild('pieChart') pieChart!: ElementRef<HTMLCanvasElement>;
   @ViewChild('lineChart') lineChart!: ElementRef<HTMLCanvasElement>;
 
-  private employeeApiUrl = 'https://hub.dummyapis.com/employee?noofRecords=50&idStarts=1001'; // Mock API
-  private medicalDetailsApiUrl = 'http://localhost:3000/medicalDetails'; // Mock API
+  private employeeApiUrl = 'https://hub.dummyapis.com/employee?noofRecords=50&idStarts=1001'; 
+  private medicalDetailsApiUrl = 'https://motion-referring-programmer-long.trycloudflare.com/medicalDetails'; 
 
   chartLabels: any = {};
 
@@ -124,7 +124,7 @@ export class EmployeeChartsComponent implements OnInit {
           labels,
           datasets: [
             {
-              label: this.chartLabels['charts.bar_chart'],  // Use translated label here
+              label: this.chartLabels['charts.bar_chart'],  
               data,
               backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0'],
             },
@@ -168,7 +168,7 @@ export class EmployeeChartsComponent implements OnInit {
           labels,
           datasets: [
             {
-              label: this.chartLabels['charts.line_chart'],  // Use translated label here
+              label: this.chartLabels['charts.line_chart'],  
               data,
               borderColor: '#36A2EB',
               backgroundColor: 'rgba(54, 162, 235, 0.2)',
